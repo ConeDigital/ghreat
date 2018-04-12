@@ -1,0 +1,645 @@
+body{
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $font-color;
+  font-family: $primary-font;
+}
+
+h2{
+  color: #34383F;
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 36px;
+  margin: 0 0 25px;
+
+  strong{
+    font-weight: 800;
+  }
+}
+h3{
+  font-size: 30px;
+  line-height: 31px;
+  font-weight: normal;
+}
+p{
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.background-img{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.max-width{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+  width: 100%;
+
+  @include breakpoint(tablet) {
+    padding: 0 15px;
+  }
+}
+
+.medium-width{
+  max-width: 1060px;
+}
+
+.small-width{
+  max-width: 710px;
+}
+
+.absolute-link{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+
+.background-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.load-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 20;
+}
+
+.section-content{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include breakpoint(medium) {
+    flex-direction: column-reverse;
+  }
+
+
+  a{
+    color: $primary-color;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    border: 2px solid $primary-color;
+    transition: 0.2s ease-in-out;
+    padding: 9px 26px;
+    display: inline-block;
+    margin-top: 25px;
+    border-radius: 100px;
+    text-decoration: none;
+
+    &:hover{
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+
+//SLIDE EFFECT ----------------------------------------
+
+.slide-effect{
+  opacity: 0;
+}
+
+.come-in {
+  transform: translateY(80px);
+  animation: come-in 1s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+  opacity: 1;
+}
+
+//-------------------------------------------------------
+
+.page-wrapper{
+  position: relative;
+}
+
+.hero{
+  position: relative;
+  height: 630px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #00c6ff, #0072ff);
+
+  @include breakpoint(medium) {
+    height: auto;
+  }
+}
+
+.hero-content{
+  position: relative;
+  top: 0;
+  transition: 0.2s ease-in-out;
+  z-index: 1;
+
+  @include breakpoint(medium) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    max-width: 500px;
+  }
+
+  @include breakpoint(mobile) {
+    padding-top: 115px;
+    padding-bottom: 115px;
+  }
+
+  h2{
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 70px;
+    margin: 0 0 22px;
+
+    @include breakpoint(medium) {
+      font-size: 35px;
+      line-height: 52px;
+      margin: 0 0 10px;
+    }
+
+    @include breakpoint(mobile) {
+      font-size: 27px;
+      line-height: 40px;
+    }
+  }
+
+  h6{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    margin: 0 0 10px;
+  }
+
+  p{
+    color: rgba(255,255,255,0.8);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    margin: 0;
+    max-width: 716px;
+
+    @include breakpoint(medium) {
+      font-size: 20px;
+      line-height: 33px;
+    }
+
+    @include breakpoint(mobile) {
+      line-height: 26px;
+    }
+  }
+  a{
+    margin-top: 30px;
+  }
+}
+
+.wave-image{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.round-link{
+  border-radius: 100px;
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding: 15px 50px;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  margin-top: 40px;
+
+  @include breakpoint(medium) {
+    padding: 12px 30px;
+    font-size: 12px;
+  }
+
+  &:hover{
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.center-content{
+  text-align: center;
+  max-width: 819px;
+  margin: 0 auto;
+
+  @include breakpoint(mobile) {
+    text-align: left;
+  }
+
+  p{
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 31px;
+    margin: 0;
+
+    @include breakpoint(tablet) {
+     font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}
+
+.halfs-section{
+  padding: 140px 0;
+  min-height: 32vw;
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(medium) {
+    padding: 75px 0 90px;
+    flex-direction: column;
+  }
+}
+
+.grey-section{
+  background-color: #F8F9FB;
+
+  img{
+    @include breakpoint(medium) {
+      margin: 0 auto 50px;
+    }
+  }
+
+  .section-content{
+    @include breakpoint(medium) {
+      flex-direction: column;
+    }
+  }
+}
+
+.halfs-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  @include breakpoint(laptop) {
+    flex-direction: column;
+  }
+}
+
+.half-reverse{
+  @include breakpoint(laptop) {
+    flex-direction: column-reverse;
+  }
+}
+
+.half-content{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include breakpoint(laptop) {
+    width: 100%;
+  }
+
+  &:last-child{
+    justify-content: flex-end;
+
+    @include breakpoint(laptop) {
+      justify-content: flex-start;
+    }
+  }
+
+  img{
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+  }
+  h3{
+    margin: 0;
+  }
+  p{
+    margin: 33px 0;
+  }
+  a{
+    color: $primary-color;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+
+    &:hover{
+      color: darken($primary-color, 20%);
+    }
+  }
+}
+
+.half-content-text{
+  max-width: 385px;
+
+  @include breakpoint(laptop) {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.half-content-empty{
+  padding: 100px 0;
+  min-height: 32vw;
+  width: 100%;
+
+  @include breakpoint(laptop) {
+    display: none;
+  }
+}
+
+.split-section{
+  display: flex;
+  position: relative;
+}
+
+.split-content{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(laptop) {
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 42px;
+  }
+}
+
+.split-img{
+
+  @include breakpoint(laptop) {
+    display: none;
+  }
+}
+
+.contact-modal-section{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: rgba(0,0,0,0.2);
+  width: 100%;
+  height: 100vh;
+  padding: 20px 0;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: scroll;
+  box-sizing: border-box;
+
+  @include breakpoint(small) {
+    padding: 0;
+  }
+}
+
+.contact-modal{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  height: max-content;
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+  position: relative;
+  top: 0;
+  box-sizing: border-box;
+  padding: 25px 45px 45px;
+
+  @include breakpoint(small) {
+    border-radius: 0;
+    padding: 45px 15px 60px;
+    height: 100vh;
+  }
+
+  h5{
+    color: #000000;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 33px;
+    text-align: center;
+    margin: 0;
+
+    span{
+      font-weight: bold;
+    }
+  }
+  label{
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 25px;
+    display: block;
+  }
+  input{
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    padding: 7px 13px 10px;
+    outline: none;
+    color: #9B9B9B;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    margin-top: 9px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 350px;
+  }
+  input[type=submit], .contact-modal-button{
+    border: 2px solid $primary-color;
+    border-radius: 100px;
+    background-color: $primary-color;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    padding: 9px 53px;
+    width: max-content;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover{
+      background: darken($primary-color, 10%);
+    }
+  }
+
+  .contact-modal-button{
+    margin: 50px auto 0;
+  }
+  p{
+    margin: 0;
+  }
+
+  div.wpcf7 .ajax-loader{
+    display: none;
+  }
+
+  .wpcf7-response-output{
+    border: none !important;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 12px;
+    font-size: 14px;
+
+    @include breakpoint(small) {
+      bottom: 20px;
+      font-size: 12px;
+    }
+  }
+
+  form{
+    min-height: 300px;
+  }
+  span.wpcf7-not-valid-tip {
+    color: #f00;
+    font-size: 11px;
+    position: absolute;
+    width: max-content;
+    top: 32px;
+    left: 0;
+  }
+}
+
+.close-contact-modal{
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+  }
+}
+
+.contact-modal-business{
+  display: none;
+}
+
+.contact-modal-needs{
+  display: none;
+}
+
+.contact-modal-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+
+  span{
+    color: #7F7F7F;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    margin-top: 5px;
+    display: inline-block;
+
+    @include breakpoint(small) {
+      font-size: 12px;
+    }
+  }
+}
+
+.contact-modal-headline{
+  height: 33px;
+  margin: 25px 0 60px;
+
+  p{
+    color: #000000;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 11px 0;
+  }
+}
+
+.active-step{
+  span{
+    color: $primary-color;
+  }
+}
+
+.contact-modal-step{
+  cursor: pointer;
+  width: 33.3%;
+  text-align: center;
+}
+
+
+.contact-modal-step-number{
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: 1px solid #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.load-fade{
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.move-down{
+  top: -60px;
+  transition: 0.3s ease-in-out;
+}

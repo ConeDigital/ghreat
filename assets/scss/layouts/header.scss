@@ -1,0 +1,271 @@
+header{
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+
+  @include breakpoint(medium) {
+    top: 15px;
+  }
+}
+
+.header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: 0.2s ease-in-out;
+
+  h4{
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 33px;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    @include breakpoint(medium) {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+    }
+  }
+}
+
+.header-logo{
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(medium) {
+    align-items: flex-start;
+  }
+
+  img{
+    height: 36px;
+    margin-right: 13px;
+
+    @include breakpoint(medium) {
+      height: 25px;
+    }
+  }
+}
+
+.header-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint(medium) {
+   align-items: flex-end;
+  }
+
+  a{
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    border: 2px solid #FFFFFF;
+    border-radius: 100px;
+    padding: 9px 26px;
+    text-decoration: none;    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: 0.2s ease-in-out;
+
+    @include breakpoint(medium) {
+      padding: 0;
+      border: none;
+
+      &:hover{
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    &:hover{
+      background-color: $primary-color;
+      border: 2px solid $primary-color;
+
+
+      @include breakpoint(medium) {
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+
+  p{
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 19px;
+    margin: 7px 0 0;
+
+    @include breakpoint(medium) {
+      margin: 0;
+    }
+  }
+  span{
+    color: #69A7D1;
+  }
+}
+
+
+// --------- HAMBURGER STYLING --------------
+
+.hamburger{
+  display: none;
+  padding: 0;
+  outline: none;
+
+  @include breakpoint(laptop) {
+    display: block;
+  }
+
+  &:hover{
+    .hamburger-inner:before {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+.hamburger-box{
+  width: 25px;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before{
+  width: 100%;
+  border-radius: 0;
+  background-color: $font-color;
+}
+.hamburger-inner:after{
+  bottom: -8px;
+}
+.hamburger-inner:before {
+  top: -8px;
+  width: 50%;
+  transition: top .1s .34s ease-in, opacity .1s ease-in, width .2s !important;
+}
+
+// --------- MOBILE MENU STYLING --------------
+
+.mobile-menu{
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: #324B6C;
+  top: 60px;
+  left: 0;
+  position: fixed;
+  transition: transform 0.3s ease-in-out;
+  z-index: 90;
+  display: none;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-primary-menu-container{
+    ul{
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+  li{
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.23);
+    opacity: 0;
+    left: -20px;
+    position: relative;
+
+
+    &:hover{
+      background: rgba(255,255,255,.23);
+      transition: 0.2s ease-in-out;
+      transition-delay: 0s !important;
+    }
+  }
+
+  a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    width: calc(100% - 60px);
+    height: 100%;
+    padding: 20px 30px;
+
+    :before{
+      content: none;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 18px 15px;
+      width: calc(100% - 30px);
+    }
+  }
+
+}
+
+.mobile-links{
+  li{
+    opacity: 1;
+    left: 0;
+    transition: opacity 0.1s ease-in-out, left 0.2s ease-in-out;
+    transition-delay: 0.1s;
+  }
+
+  li:nth-child(2) {
+    transition-delay: 0.2s; /* So they look staggered */
+  }
+  li:nth-child(3) {
+    transition-delay: 0.3s; /* So they look staggered */
+  }
+  li:nth-child(4) {
+    transition-delay: 0.4s; /* So they look staggered */
+  }
+  li:nth-child(5) {
+    transition-delay: 0.5s; /* So they look staggered */
+  }
+  li:nth-child(6) {
+    transition-delay: 0.6s; /* So they look staggered */
+  }
+}
+
+
+
+//FOOTER------------------------------------------------
+
+footer{
+  background-color: #03162B;
+  padding: 21px 0 11px;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img{
+    height: 46px;
+
+    @include breakpoint(medium) {
+      height: 30px;
+    }
+  }
+
+  p{
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 12px 0 0;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      font-size: 10px;
+    }
+  }
+}

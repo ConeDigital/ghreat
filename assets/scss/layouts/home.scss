@@ -1,0 +1,686 @@
+.home-hero-content{
+  position: relative;
+  max-width: 1000px;
+}
+
+.home-top-section{
+  padding: 100px 0 130px;
+
+  @include breakpoint(medium) {
+    padding: 50px 0 90px;
+  }
+
+  img{
+    width: 295px;
+    height: auto;
+
+    @include breakpoint(medium) {
+      margin: 0 auto 50px;
+    }
+  }
+
+  .home-top-content{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.home-top-text{
+  max-width: 819px;
+  text-align: center;
+}
+
+/*---------------------------
+
+  Function section
+
+-----------------------------*/
+
+.funk-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.funk-grid{
+  display: flex;
+  justify-content: center;
+  max-width: 1030px;
+  margin-top: 90px;
+
+  @include breakpoint(tablet) {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+}
+
+.funk-content{
+  max-width: 335px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px;
+  align-items: center;
+  width: 33.3%;
+  position: relative;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    margin: 0 0 40px 0;
+  }
+
+  img{
+    height: 90px;
+    width: auto;
+    margin: 0 auto;
+  }
+  p{
+    text-align: center;
+    color: #1F2E5C;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 36px;
+  }
+
+  &:first-child{
+    .second-line{
+      display: none;
+    }
+
+    .first-line{
+      display: block;
+    }
+  }
+
+  &:last-child{
+    .funk-line{
+      display: none;
+    }
+  }
+
+  .first-line{
+    display: none;
+  }
+
+  .funk-line{
+    position: absolute;
+    height: auto;
+    width: 134px;
+    right: -68px;
+    top: 60px;
+
+    @include breakpoint(medium) {
+      display: none !important;
+    }
+  }
+  .second-line{
+    top:30px;
+  }
+}
+
+
+/*---------------------------
+
+  Half section
+
+-----------------------------*/
+
+.half-section{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.half-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @include breakpoint(medium) {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+}
+
+.half-left-content{
+  width: 490px;
+  max-width: 39vw;
+
+  @include breakpoint(medium) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+.half-reverse{
+  flex-direction: row-reverse;
+  background: #1F2E5C;
+
+
+  .half-left{
+    align-items: flex-end;
+
+    a{
+      color: white;
+      border: 2px solid white;
+    }
+  }
+
+  p, h2{
+    color: white;
+  }
+}
+
+.half-right{
+  height: 48vw;
+  width: 50%;
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+
+
+
+.customers-border{
+  background-color: #F9F9FA;
+  padding: 20px 0;
+
+  .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img{
+    margin: 0 40px;
+
+    @include breakpoint(desktop) {
+      margin: 0 25px;
+      max-height: 40px;
+      max-width: 120px;
+      width: auto;
+      height: auto;
+    }
+    @include breakpoint(medium) {
+      max-height: 30px;
+      max-width: 110px;
+    }
+    @include breakpoint(tablet) {
+      margin: 0 15px;
+    }
+    @include breakpoint(small) {
+      margin: 0 10px;
+    }
+    @include breakpoint(mobile) {
+      max-height: 22px;
+      max-width: 90px;
+    }
+  }
+}
+
+.left-content{
+  max-width: 570px;
+  margin-right: 40px;
+
+  @include breakpoint(medium) {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+.right-content{
+  margin: 0 0 0 40px;
+
+  @include breakpoint(medium) {
+    margin: 0;
+  }
+}
+
+.channels-section{
+  padding: 90px 0 140px;
+
+  @include breakpoint(medium) {
+    padding: 75px 0 90px;
+  }
+
+  h3{
+    color: #34383F;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+
+    @include breakpoint(small) {
+      font-size: 27px;
+      line-height: 37px;
+    }
+
+    strong{
+      font-weight: 800;
+    }
+  }
+}
+
+.channels-grid{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 53px;
+
+  @include breakpoint(medium) {
+    margin-top: 10px;
+  }
+
+  img{
+    width: 20%;
+    height: auto;
+
+    @include breakpoint(medium) {
+      width: 33.3%;
+    }
+  }
+}
+
+.swiper-top{
+
+  .swiper-slide{
+    height: calc(100vh - 105px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(mobile) {
+      height: calc(100vh - 160px);
+    }
+  }
+}
+
+.case-swiper-content{
+  max-width: 580px;
+  position: relative;
+
+  blockquote{
+    margin: 0 0 10px;
+    padding: 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33px;
+
+    @include breakpoint(mobile) {
+      font-size: 20px;
+      line-height: 29px;
+    }
+
+    &:before{
+      content: 'format_quote';
+      font-family: 'Material Icons';
+      position: absolute;
+      top: 0;
+      left: -15px;
+      font-weight: normal;
+      font-size: 30px;
+
+      @include breakpoint(small) {
+        top: -25px;
+        left: 6px;
+      }
+    }
+  }
+
+  p{
+    color: #DADADA;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+  }
+}
+
+.case-swiper-customer{
+  margin-top: 36px;
+
+  span{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+  }
+  p{
+    color: #DADADA;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin: 4px 0 0;
+  }
+}
+
+.swiper-bottom{
+  max-width: 580px;
+  position: relative;
+  top: -42px;
+
+  @include breakpoint(medium) {
+    top: -32px;
+  }
+
+  .is-selected{
+    .swiper-bottom-img{
+      opacity: 1;
+    }
+  }
+
+  .swiper-slide{
+    text-align: center;
+    cursor: pointer;
+
+    img{
+      width: auto;
+      height: auto;
+      max-width: 95px;
+      max-height: 28px;
+
+      @include breakpoint(mobile) {
+        max-width: 80px;
+        max-height: 23px;
+      }
+    }
+  }
+}
+
+.case-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 11px 0 0;
+  height: 28px;
+
+  @include breakpoint(mobile) {
+    height: 23px;
+  }
+}
+
+.swiper-bottom-img-background{
+  height: 80px;
+  width: 80px;
+  border: 3px solid #FFF;
+  border-radius: 100%;
+  margin: 0 auto;
+  background: white;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @include breakpoint(mobile) {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+.swiper-bottom-img{
+  height: 100%;
+  width: 100%;
+  opacity: .59;
+  border: 3px solid #FFF;
+  border-radius: 100%;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+
+  &:after{
+    content: '';
+  }
+}
+
+.faq-section{
+  h3{
+    text-align: left;
+  }
+}
+
+.faq-content{
+  margin-bottom: 60px;
+  margin-top: 45px;
+
+  h4{
+    color: #34383F;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 38px;
+    margin: 0 0 12px;
+
+    @include breakpoint(mobile) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  p{
+    color: #34383F;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+
+    @include breakpoint(mobile) {
+      font-size: 16px;
+      line-height: 23px;
+    }
+  }
+}
+
+.home-divider{
+  padding: 125px 0;
+
+  @include breakpoint(tablet) {
+    padding: 76px 0;
+  }
+}
+
+.background-section{
+  text-align: center;
+  position: relative;
+  padding: 125px 0;
+
+  @include breakpoint(tablet) {
+    padding: 75px 0;
+  }
+
+  .max-width{
+    position: relative;
+  }
+
+  h3{
+    color: #FFFFFF;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 46px;
+    text-align: center;
+    margin: 0 0 19px;
+
+    @include breakpoint(small) {
+      font-size: 30px;
+      line-height: 39px;
+    }
+  }
+  p{
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 804px;
+
+    @include breakpoint(medium) {
+      font-size: 21px;
+    }
+    @include breakpoint(small) {
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+}
+
+.magazine-section{
+  text-align: center;
+  padding: 50px 0;
+
+  span{
+    color: #9B9B9B;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+
+  img{
+    margin:0 20px 25px 20px;
+  }
+}
+
+
+.absolute-section{
+  padding: 100px 30px;
+  position: relative;
+
+  @include breakpoint(medium) {
+    padding: 75px 30px 90px;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 60px 15px 80px;
+  }
+
+  img{
+    width: 100%;
+    max-width: 52vw;
+
+    @include breakpoint(medium) {
+      max-width: 77vw;
+    }
+  }
+
+  .section-content{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: max-content;
+    width: calc(100% - 30px);
+    box-sizing: border-box;
+    justify-content: flex-end;
+    left: 0;
+    right: 0;
+
+    @include breakpoint(medium) {
+      position: relative;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+  .left-content{
+    width: 490px;
+    max-width: 39vw;
+
+    @include breakpoint(medium) {
+     max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.home-section{
+
+  a{
+    color: $primary-color;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    border: 2px solid $primary-color;
+    transition: 0.2s ease-in-out;
+    padding: 9px 26px;
+    display: inline-block;
+    margin-top: 25px;
+    border-radius: 100px;
+    text-decoration: none;
+
+    &:hover{
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+.explain-section{
+  padding: 90px 0 60px;
+  background-color: #F8F9FB;
+  text-align: center;
+
+  @include breakpoint(small) {
+    padding: 60px 0;
+
+  }
+}
+
+.explain-grid{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 8px;
+  margin-bottom: 40px;
+
+  @include breakpoint(small) {
+    padding: 0;
+  }
+}
+
+.explain-card{
+  width: calc(33.3% - 44px);
+  margin: 0 22px 42px;
+
+  @include breakpoint(laptop) {
+    width: calc(50% - 44px);
+  }
+  @include breakpoint(small) {
+    width: calc(50% - 30px);
+    margin: 0 15px 42px;
+  }
+  @include breakpoint(mobile) {
+    width: calc(100% - 30px);
+  }
+
+  p{
+    margin: 0;
+    text-align: left;
+  }
+}
+
+.explain-icon{
+  height: 35px;
+  width: 35px;
+  background-color: $primary-color;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 15px;
+
+  i{
+    font-size: 20px;
+  }
+}
