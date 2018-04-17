@@ -20,8 +20,8 @@
 <body>
 
 <div class="load-overlay"></div>
-<div class="contact-modal-section">
-    <div class="contact-modal load-fade move-down">
+<div class="contact-modal-section contact-modal-section-fixed">
+    <div class="contact-modal contact-modal-fixed load-fade move-down">
         <i class="material-icons close-contact-modal">close</i>
         <div class="contact-modal-header">
             <div class="contact-modal-step active-step contact-step-1">
@@ -41,7 +41,8 @@
             <h5 class="contact-modal-you">Berätta lite mer <span>om dig</span></h5>
             <h5 class="contact-modal-business">Berätta lite mer <span>om ditt företag</span></h5>
             <h5 class="contact-modal-needs"><span>Förtidsregistrera</span> dig idag</h5>
-            <p>Förtidsregistrera dig nu till 30% av kostnaden</p>
+            <p class="contact-modal-you">Förtidsregistrera dig nu till 30% av kostnaden</p>
+            <p class="contact-modal-business">Förtidsregistrera dig nu till 30% av kostnaden</p>
         </div>
         <?php echo do_shortcode(get_field('contact-form', 'options')) ; ?>
     </div>
@@ -51,9 +52,9 @@
         <div class="header-logo">
             <img src="<?php the_field('logo', 'options') ; ?>">
         </div>
-        <div class="header-right">
-            <a class="open-contact-modal" href="#">Förtidsregistrera Dig Nu</a>
-        </div>
+<!--        <div class="header-right">-->
+<!--            <a class="open-contact-modal" href="#">Förtidsregistrera Dig Nu</a>-->
+<!--        </div>-->
     </div>
 </header>
 <section class="mobile-menu">

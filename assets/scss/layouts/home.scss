@@ -1,6 +1,5 @@
 .home-hero-content{
   position: relative;
-  max-width: 1000px;
 }
 
 .home-top-section{
@@ -130,6 +129,10 @@
   display: flex;
   justify-content: flex-end;
   position: relative;
+
+  @include breakpoint(medium) {
+    flex-direction: column-reverse;
+  }
 }
 
 .half-left{
@@ -187,7 +190,8 @@
   width: 50%;
 
   @include breakpoint(medium) {
-    display: none;
+    height: 70vw;
+    width: 100%;
   }
 }
 
@@ -493,6 +497,7 @@
   text-align: center;
   position: relative;
   padding: 125px 0;
+  background: linear-gradient(to left,#00c6ff,#0072ff);
 
   @include breakpoint(tablet) {
     padding: 75px 0;

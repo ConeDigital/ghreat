@@ -3,10 +3,36 @@
     <div class="hero background-img">
         <!--        <div class="background-overlay"></div>-->
         <div class="max-width hero-content home-hero-content move-down load-fade">
-            <h6>Förtidsregistrera dig till:</h6>
-            <h2><?php the_title() ; ?></h2>
-            <p><?php the_content() ; ?></p>
-            <a class="round-link open-contact-modal" href="#">Förtidsregistrera dig nu</a>
+            <div class="hero-text">
+                <h6>Förtidsregistrera dig till:</h6>
+                <h2><?php the_title() ; ?></h2>
+                <p><?php the_content() ; ?></p>
+            </div>
+            <div class="contact-modal">
+                <div class="contact-modal-header">
+                    <div class="contact-modal-step active-step contact-step-1">
+                        <div class="contact-modal-step-number">1</div>
+                        <span>Dina uppgifter</span>
+                    </div>
+                    <div class="contact-modal-step contact-step-2">
+                        <div class="contact-modal-step-number">2</div>
+                        <span>Företagsinfo</span>
+                    </div>
+                    <div class="contact-modal-step contact-step-3">
+                        <div class="contact-modal-step-number">3</div>
+                        <span>Beställ</span>
+                    </div>
+                </div>
+                <div class="contact-modal-headline">
+                    <h5 class="contact-modal-you">Berätta lite mer <span>om dig</span></h5>
+                    <h5 class="contact-modal-business">Berätta lite mer <span>om ditt företag</span></h5>
+                    <h5 class="contact-modal-needs"><span>Förtidsregistrera</span> dig idag</h5>
+                    <p class="contact-modal-you">Förtidsregistrera dig nu till 30% av kostnaden</p>
+                    <p class="contact-modal-business">Förtidsregistrera dig nu till 30% av kostnaden</p>
+                </div>
+                <?php echo do_shortcode(get_field('contact-form', 'options')) ; ?>
+            </div>
+<!--            <a class="round-link open-contact-modal" href="#">Förtidsregistrera dig nu</a>-->
         </div>
         <img class="wave-image" src="<?php echo esc_url(home_url( '/wp-content/themes/ghreat/assets/images/blue-wave.png' ) ); ?>">
     </div>
@@ -64,13 +90,13 @@
         </div>
     </section>
 <?php endif ; ?>
-    <section class="half-section half-reverse home-section">
+    <section class="half-section home-section">
         <div class="half-left max-width blue-background slide-effect">
             <div class="half-left-content">
-                <?php the_field('third-section-content') ; ?>
+                <?php the_field('real-fifth-content') ; ?>
             </div>
         </div>
-        <div class="half-right background-img" style="background-image: url('<?php the_field('third-section-img') ; ?>')"></div>
+        <div class="half-right background-img" style="background-image: url('<?php the_field('real-fifth-img') ; ?>')"></div>
     </section>
     <section class="explain-section home-section">
         <div class="explain-grid max-width slide-effect">
@@ -104,7 +130,7 @@
     </section>
 
 <?php if(get_field('home-background-content')) : ?>
-    <section class="background-section background-img" style="background-image: url('<?php the_field('home-background-img') ; ?>')">
+    <section class="background-section background-img">
         <div class="max-width medium-width slide-effect">
             <?php the_field('home-background-content') ; ?>
         </div>

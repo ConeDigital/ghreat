@@ -18,10 +18,10 @@ jQuery(document).ready( function($) {
     //Open Contact Modal
     $('.open-contact-modal').on('click', function(e){
         e.preventDefault();
-        $('.contact-modal-section').css('display', 'flex');
+        $('.contact-modal-section-fixed').css('display', 'flex');
         setTimeout(function(){
-            $('.contact-modal').removeClass('load-fade');
-            $('.contact-modal').removeClass('move-down');
+            $('.contact-modal-fixed').removeClass('load-fade');
+            $('.contact-modal-fixed').removeClass('move-down');
         }, 50);
 
     });
@@ -30,21 +30,21 @@ jQuery(document).ready( function($) {
     //Close Contact Modal
     $(document).mouseup(function(e)
     {
-        var container = $(".contact-modal");
+        var container = $(".contact-modal-fixed");
 
         // if the target of the click isn't the container nor a descendant of the container
         if (!container.is(e.target) && container.has(e.target).length === 0)
         {
-            $('.contact-modal').addClass('load-fade');
-            $('.contact-modal').addClass('move-down');
-            $('.contact-modal-section').fadeOut();
+            $('.contact-modal-fixed').addClass('load-fade');
+            $('.contact-modal-fixed').addClass('move-down');
+            $('.contact-modal-section-fixed').fadeOut();
         }
     });
 
     $('.close-contact-modal').on('click', function(){
-        $('.contact-modal').addClass('load-fade');
-        $('.contact-modal').addClass('move-down');
-        $('.contact-modal-section').fadeOut();
+        $('.contact-modal-fixed').addClass('load-fade');
+        $('.contact-modal-fixed').addClass('move-down');
+        $('.contact-modal-section-fixed').fadeOut();
     });
 
     //Change contact modal content
@@ -57,6 +57,11 @@ jQuery(document).ready( function($) {
         }, 300);
     });
     $('.contact-step-2').on('click', function() {
+        var form = $(this).closest('form');
+        if(validateStep(form, 'you') === 'error'){
+            alert('Du måste fylla i alla fält');
+            return false;
+        }
         $('.contact-modal-step').removeClass('active-step');
         $('.contact-step-2').addClass('active-step');
         $('.contact-modal-you, .contact-modal-needs').fadeOut('fast');
@@ -65,6 +70,11 @@ jQuery(document).ready( function($) {
         }, 300);
     });
     $('.contact-step-3').on('click', function() {
+        var form = $(this).closest('form');
+        if(validateStep(form, 'business') === 'error'){
+            alert('Du måste fylla i alla fält');
+            return false;
+        }
         $('.contact-modal-step').removeClass('active-step');
         $('.contact-step-3').addClass('active-step');
         $('.contact-modal-you, .contact-modal-business').fadeOut('fast');
@@ -72,6 +82,17 @@ jQuery(document).ready( function($) {
             $('.contact-modal-needs').fadeIn();
         }, 300);
     });
+
+    function validateStep(form, step){
+        var response = 'good';
+        $(form).find('.contact-modal-'+step +' input').each(function(){
+            if(this.value == '' || this.value == undefined || this.value == null){
+                response = 'error';
+                return false;
+           }
+        });
+        return response;
+    }
 
     //Slide Effect when scrolling down
     (function($) {

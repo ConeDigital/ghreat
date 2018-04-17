@@ -147,13 +147,15 @@ p{
 
 .hero{
   position: relative;
-  height: 630px;
+  min-height: 630px;
   display: flex;
   align-items: center;
   color: white;
   background: #00c6ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #00c6ff, #0072ff);
+  padding: 60px 0;
+  box-sizing: border-box;
 
   @include breakpoint(medium) {
     height: auto;
@@ -165,23 +167,19 @@ p{
   top: 0;
   transition: 0.2s ease-in-out;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  @include breakpoint(medium) {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    max-width: 500px;
-  }
-
-  @include breakpoint(mobile) {
-    padding-top: 115px;
-    padding-bottom: 115px;
+  @include breakpoint(laptop) {
+    flex-direction: column;
   }
 
   h2{
     color: #FFFFFF;
-    font-size: 50px;
+    font-size: 46px;
     font-weight: bold;
-    line-height: 70px;
+    line-height: 56px;
     margin: 0 0 22px;
 
     @include breakpoint(medium) {
@@ -234,7 +232,7 @@ p{
 
 .round-link{
   border-radius: 100px;
-  background-color: $primary-color;
+  background-color: transparent;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -245,6 +243,7 @@ p{
   text-decoration: none;
   transition: 0.2s ease-in-out;
   margin-top: 40px;
+  border: 2px solid;
 
   @include breakpoint(medium) {
     padding: 12px 30px;
@@ -253,6 +252,16 @@ p{
 
   &:hover{
     background-color: darken($primary-color, 10%);
+  }
+}
+
+.hero-text{
+  margin-right: 40px;
+  max-width: 560px;
+
+  @include breakpoint(laptop) {
+    margin: 70px 0;
+    max-width: 100%;
   }
 }
 
@@ -436,24 +445,18 @@ p{
 }
 
 .contact-modal{
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   background: white;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   height: max-content;
   transition: 0.3s ease-in-out;
   opacity: 1;
   position: relative;
   top: 0;
   box-sizing: border-box;
-  padding: 25px 45px 45px;
-
-  @include breakpoint(small) {
-    border-radius: 0;
-    padding: 45px 15px 60px;
-    height: 100vh;
-  }
+  padding: 0 0 45px;
 
   h5{
     color: #000000;
@@ -462,6 +465,10 @@ p{
     line-height: 33px;
     text-align: center;
     margin: 0;
+
+    @include breakpoint(mobile) {
+      font-size: 20px;
+    }
 
     span{
       font-weight: bold;
@@ -476,18 +483,23 @@ p{
     display: block;
   }
   input{
-    border: 1px solid #EEEEEE;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
     padding: 7px 13px 10px;
     outline: none;
     color: #9B9B9B;
     font-size: 16px;
     line-height: 22px;
     font-weight: normal;
-    margin-top: 9px;
+    margin-top: 19px;
     width: 100%;
     box-sizing: border-box;
-    max-width: 350px;
+    transition: 0.2s ease-in-out;
+
+    &:focus{
+      border-bottom: 1px solid $primary-color;
+    }
   }
   input[type=submit], .contact-modal-button{
     border: 2px solid $primary-color;
@@ -507,6 +519,30 @@ p{
     &:hover{
       background: darken($primary-color, 10%);
     }
+  }
+
+  input[type=checkbox]{
+    margin-right: 10px;
+    width: auto;
+  }
+
+  .submit-text{
+    color: black;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+    padding: 0 0 10px;
+  }
+
+  .wpcf7-checkbox{
+    span{
+      color: black;
+      font-size: 12px;
+    }
+  }
+
+  .wpcf7{
+    padding: 0 25px;
   }
 
   .contact-modal-button{
@@ -538,7 +574,6 @@ p{
   }
 
   form{
-    min-height: 300px;
   }
   span.wpcf7-not-valid-tip {
     color: #f00;
@@ -547,6 +582,15 @@ p{
     width: max-content;
     top: 32px;
     left: 0;
+  }
+}
+
+
+.contact-modal-fixed{
+
+  @include breakpoint(small) {
+    border-radius: 0;
+    height: 100vh;
   }
 }
 
@@ -560,6 +604,9 @@ p{
 
   @include breakpoint(medium) {
     display: block;
+  }
+  @include breakpoint(mobile) {
+    right: 5px;
   }
 }
 
@@ -575,7 +622,8 @@ p{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 25px;
+  padding: 15px 0;
+  background-color: #F6F6F6;
 
   span{
     color: #7F7F7F;
@@ -593,7 +641,7 @@ p{
 
 .contact-modal-headline{
   height: 33px;
-  margin: 25px 0 60px;
+  margin: 25px 0 40px;
 
   p{
     color: #000000;
@@ -601,8 +649,11 @@ p{
     line-height: 22px;
     text-align: center;
     width: 100%;
-    display: block;
     margin: 11px 0;
+
+    @include breakpoint(mobile) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -632,6 +683,7 @@ p{
   font-size: 14px;
   font-weight: 600;
   line-height: 19px;
+  background: white;
 }
 
 .load-fade{
@@ -642,4 +694,15 @@ p{
 .move-down{
   top: -60px;
   transition: 0.3s ease-in-out;
+}
+
+.contact-form-wrapper{
+  min-height: 268px;
+  background: white;
+}
+
+.checky{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
