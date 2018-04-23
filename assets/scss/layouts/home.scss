@@ -36,6 +36,10 @@
 
 -----------------------------*/
 
+.cd-more-text{
+  display: none;
+}
+
 .funk-section{
   display: flex;
   flex-direction: column;
@@ -455,33 +459,43 @@
   }
 }
 
+.faq-grid{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .faq-content{
-  margin-bottom: 60px;
-  margin-top: 45px;
+  margin-bottom: 45px;
+  width: calc(50% - 45px);
+  margin-right: 45px;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  &:nth-child(even){
+    width: 50%;
+    margin-right: 0;
+
+    @include breakpoint(tablet) {
+      width: 100%;
+    }
+  }
 
   h4{
     color: #34383F;
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 38px;
-    margin: 0 0 12px;
-
-    @include breakpoint(mobile) {
-      font-size: 24px;
-      line-height: 32px;
-    }
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    margin: 0 0 20px;
   }
 
   p{
     color: #34383F;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 25px;
     margin: 0;
-
-    @include breakpoint(mobile) {
-      font-size: 16px;
-      line-height: 23px;
-    }
   }
 }
 

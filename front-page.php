@@ -12,23 +12,20 @@
                 <div class="contact-modal-header">
                     <div class="contact-modal-step active-step contact-step-1">
                         <div class="contact-modal-step-number">1</div>
-                        <span>Dina uppgifter</span>
+                        <span>Referens</span>
                     </div>
                     <div class="contact-modal-step contact-step-2">
                         <div class="contact-modal-step-number">2</div>
-                        <span>Företagsinfo</span>
+                        <span>Företagsuppgifter</span>
                     </div>
                     <div class="contact-modal-step contact-step-3">
                         <div class="contact-modal-step-number">3</div>
-                        <span>Beställ</span>
+                        <span>Registrera</span>
                     </div>
                 </div>
                 <div class="contact-modal-headline">
-                    <h5 class="contact-modal-you">Berätta lite mer <span>om dig</span></h5>
-                    <h5 class="contact-modal-business">Berätta lite mer <span>om ditt företag</span></h5>
-                    <h5 class="contact-modal-needs"><span>Förtidsregistrera</span> dig idag</h5>
-                    <p class="contact-modal-you">Förtidsregistrera dig nu till 30% av kostnaden</p>
-                    <p class="contact-modal-business">Förtidsregistrera dig nu till 30% av kostnaden</p>
+                    <h5 class="contact-modal-you">Förtidsregistrera ditt företag för endast <del>500</del><span> 350 kr/månad</span></h5>
+                    <h5 class="contact-modal-business">Förtidsregistrera ditt företag för endast <del>500</del><span> 350 kr/månad</span></h5>
                 </div>
                 <?php echo do_shortcode(get_field('contact-form', 'options')) ; ?>
             </div>
@@ -41,6 +38,28 @@
         <div class="max-width medium-width section-content home-top-content">
             <div class="home-top-text slide-effect">
                 <?php the_field('home-first-content') ; ?>
+                <div class="cd-more-text">
+                    <p>Ett av företagen som var det största lyckades ranka högt på sökmotorer och fick mycket
+                        leads, kontakter och affärer via sin hemsida medan de två mindre fanns långt ner på
+                        listan. Det som Marko blev upprörd över var att de två mindre företagen var bättre. De
+                        hade bättre service, kundvård, priser och var mer flexibla i sina lösningar än deras
+                        större konkurrent. Det här blev bara ett tydligt exempel på ett fall som han tyckte
+                        speglade hela B2B branschen.
+                    </p>
+                    <p>
+                        Samtidigt var företaget som Marko jobbade på med i flera affärsnätverk. Han insåg
+                        snabbt styrkan av ett nätverk och hur mycket enklare det var att hitta de produkter och
+                        tjänster som man behöver när man har en plats att vända sig till. Det ledde till att alla
+                        inom nätverket gjorde affärer till ett värde av flera miljoner kronor per år.
+                        Idén till Ghreat föddes och började sakta men säkert ta form. Marko ville nu använda
+                        styrkan av ett nätverk och sätta ihop det med ett ärligt system där samma villkor gäller
+                        för alla företag. Tjänsten som började ta form i Markos tankar ska ge inköpare en god
+                        blick över marknaden på ett transparent sätt. Han ville samtidigt att Ghreat ska lösa
+                        flera problem inom affärsvärlden så som enkel sökning med relevant sökresultat, enkelt
+                        kunna hitta referenser, förenklad kommunikation och mycket mer.
+                    </p>
+                </div>
+                <a href="#" class="cd-open-more-text">Läs historien om Ghreat</a>
             </div>
             <div class="funk-section">
                 <div class="funk-grid slide-effect">
@@ -114,8 +133,7 @@
         <a href="#" class="open-contact-modal">Registrera dig</a>
     </section>
     <section class="channels-section faq-section">
-        <div class="max-width small-width">
-            <h3><strong>FAQ</strong></h3>
+        <div class="max-width">
             <div class="faq-grid">
                 <?php if( have_rows('faq') ): ?>
                     <?php while( have_rows('faq') ) : the_row();?>

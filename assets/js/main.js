@@ -26,6 +26,12 @@ jQuery(document).ready( function($) {
 
     });
 
+    //Open More Text
+    $('.cd-open-more-text').on('click', function(e){
+        e.preventDefault();
+        $('.cd-more-text').slideToggle();
+    });
+
 
     //Close Contact Modal
     $(document).mouseup(function(e)

@@ -862,14 +862,12 @@ p {
   padding: 0 0 45px; }
   .contact-modal h5 {
     color: #000000;
-    font-size: 24px;
+    font-size: 19px;
     font-weight: normal;
     line-height: 33px;
     text-align: center;
-    margin: 0; }
-    @media (max-width: 500px) {
-      .contact-modal h5 {
-        font-size: 20px; } }
+    margin: 0;
+    padding: 0 15px; }
     .contact-modal h5 span {
       font-weight: bold; }
   .contact-modal label {
@@ -919,7 +917,7 @@ p {
     .contact-modal input[type=submit]:hover, .contact-modal .contact-modal-button:hover {
       background: #0e50c2; }
   .contact-modal input[type=checkbox] {
-    margin-right: 10px;
+    margin: 0 10px 0 0;
     width: auto; }
   .contact-modal .submit-text {
     color: black;
@@ -962,11 +960,52 @@ p {
     top: 32px;
     left: 0; }
 
+.cd-terms-link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px; }
+  .cd-terms-link a {
+    color: #1565ee;
+    margin: 0; }
+
 @media (max-width: 600px) {
   .contact-modal-fixed {
     -webkit-border-radius: 0;
             border-radius: 0;
     height: 100vh; } }
+
+.contact-list-items {
+  POSITION: RELATIVE;
+  TOP: -45px; }
+
+.contact-list-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 370px;
+  margin: 10px auto; }
+  .contact-list-item p {
+    margin: 0;
+    color: black;
+    font-size: 15px; }
+  .contact-list-item i {
+    margin-right: 10px;
+    color: #1565ee; }
 
 .close-contact-modal {
   position: absolute;
@@ -1333,10 +1372,54 @@ header {
   /* So they look staggered */ }
 
 footer {
-  background-color: #1565ee;
-  padding: 21px 0 11px; }
+  padding: 53px 0 73px;
+  background-color: #34383F; }
 
 .footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  @media (max-width: 800px) {
+    .footer {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .footer img {
+    height: 32px; }
+    @media (max-width: 800px) {
+      .footer img {
+        height: 30px; } }
+  .footer h5 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    margin: 0 0 19px; }
+  .footer p, .footer a {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    text-decoration: none; }
+
+.cd-footer-item {
+  min-width: 160px; }
+  @media (max-width: 800px) {
+    .cd-footer-item {
+      margin-bottom: 35px; } }
+
+.cd-footer-social {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1344,30 +1427,28 @@ footer {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  .footer img {
-    height: 46px; }
-    @media (max-width: 800px) {
-      .footer img {
-        height: 30px; } }
-  .footer p {
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 22px;
-    margin: 12px 0 0;
-    text-align: center; }
-    @media (max-width: 800px) {
-      .footer p {
-        font-size: 10px; } }
+          align-items: center; }
+  .cd-footer-social a {
+    min-width: 30px;
+    min-height: 30px;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 15px;
+    font-size: 20px; }
 
 .home-hero-content {
   position: relative; }
@@ -1407,6 +1488,9 @@ footer {
   Function section
 
 -----------------------------*/
+.cd-more-text {
+  display: none; }
+
 .funk-section {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1828,28 +1912,41 @@ footer {
 .faq-section h3 {
   text-align: left; }
 
+.faq-grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
 .faq-content {
-  margin-bottom: 60px;
-  margin-top: 45px; }
+  margin-bottom: 45px;
+  width: -webkit-calc(50% - 45px);
+  width: calc(50% - 45px);
+  margin-right: 45px; }
+  @media (max-width: 700px) {
+    .faq-content {
+      width: 100%;
+      margin-right: 0; } }
+  .faq-content:nth-child(even) {
+    width: 50%;
+    margin-right: 0; }
+    @media (max-width: 700px) {
+      .faq-content:nth-child(even) {
+        width: 100%; } }
   .faq-content h4 {
     color: #34383F;
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 38px;
-    margin: 0 0 12px; }
-    @media (max-width: 500px) {
-      .faq-content h4 {
-        font-size: 24px;
-        line-height: 32px; } }
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    margin: 0 0 20px; }
   .faq-content p {
     color: #34383F;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 25px;
     margin: 0; }
-    @media (max-width: 500px) {
-      .faq-content p {
-        font-size: 16px;
-        line-height: 23px; } }
 
 .home-divider {
   padding: 125px 0; }

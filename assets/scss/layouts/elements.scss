@@ -460,15 +460,12 @@ p{
 
   h5{
     color: #000000;
-    font-size: 24px;
+    font-size: 19px;
     font-weight: normal;
     line-height: 33px;
     text-align: center;
     margin: 0;
-
-    @include breakpoint(mobile) {
-      font-size: 20px;
-    }
+    padding: 0 15px;
 
     span{
       font-weight: bold;
@@ -522,7 +519,7 @@ p{
   }
 
   input[type=checkbox]{
-    margin-right: 10px;
+    margin: 0 10px 0 0;
     width: auto;
   }
 
@@ -585,12 +582,46 @@ p{
   }
 }
 
+.cd-terms-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  a{
+    color: $primary-color;
+    margin: 0;
+  }
+}
 
 .contact-modal-fixed{
 
   @include breakpoint(small) {
     border-radius: 0;
     height: 100vh;
+  }
+}
+
+.contact-list-items{
+  POSITION: RELATIVE;
+  TOP: -45px;
+}
+
+.contact-list-item{
+  display: flex;
+  align-items: center;
+  max-width: 370px;
+  margin: 10px auto;
+
+  p{
+    margin: 0;
+    color: black;
+    font-size: 15px;
+  }
+
+  i{
+    margin-right: 10px;
+    color: $primary-color;
   }
 }
 
