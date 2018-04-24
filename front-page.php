@@ -4,7 +4,7 @@
         <!--        <div class="background-overlay"></div>-->
         <div class="max-width hero-content home-hero-content move-down load-fade">
             <div class="hero-text">
-                <h6>Förtidsregistrera dig till:</h6>
+<!--                <h6>Förtidsregistrera dig till:</h6>-->
                 <h2><?php the_title() ; ?></h2>
                 <p><?php the_content() ; ?></p>
             </div>
@@ -51,6 +51,8 @@
                         snabbt styrkan av ett nätverk och hur mycket enklare det var att hitta de produkter och
                         tjänster som man behöver när man har en plats att vända sig till. Det ledde till att alla
                         inom nätverket gjorde affärer till ett värde av flera miljoner kronor per år.
+                    </p>
+                    <p>
                         Idén till Ghreat föddes och började sakta men säkert ta form. Marko ville nu använda
                         styrkan av ett nätverk och sätta ihop det med ett ärligt system där samma villkor gäller
                         för alla företag. Tjänsten som började ta form i Markos tankar ska ge inköpare en god

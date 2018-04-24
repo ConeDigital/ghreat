@@ -634,11 +634,11 @@ p {
     background-color: #0e50c2; }
 
 .hero-text {
-  margin-right: 40px;
+  margin: 0 40px 80px 0;
   max-width: 560px; }
   @media (max-width: 900px) {
     .hero-text {
-      margin: 70px 0;
+      margin: 25px 0 60px 0;
       max-width: 100%; } }
 
 .center-content {
@@ -945,11 +945,12 @@ p {
     width: 100%;
     left: 0;
     bottom: 12px;
-    font-size: 14px; }
+    font-size: 14px;
+    color: black; }
     @media (max-width: 600px) {
       .contact-modal .wpcf7-response-output {
         bottom: 20px;
-        font-size: 12px; } }
+        font-size: 10px; } }
   .contact-modal span.wpcf7-not-valid-tip {
     color: #f00;
     font-size: 11px;
@@ -973,7 +974,9 @@ p {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  position: relative;
+  top: -25px; }
   .cd-terms-link a {
     color: #1565ee;
     margin: 0; }
